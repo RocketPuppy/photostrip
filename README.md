@@ -14,3 +14,10 @@ To run the app in development mode, do the following:
 ```
 $ ./python -m flask run
 ```
+
+You will need a nix-channel for `nixos-unstable` set up locally.
+To do this, run:
+
+```
+$ nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+```
