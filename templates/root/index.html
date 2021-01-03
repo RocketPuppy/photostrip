@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>Submit Pictures</h1>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('photostrip') }}" method="post" enctype="multipart/form-data">
+    <label for="images">Select Images</label>
+    <input name="images" id="images" required type="file" accept="image/*" multiple />
+    <input type="submit" value="Make My Photostrip!" />
+  </form>
+{% endblock %}
