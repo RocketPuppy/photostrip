@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+PACKAGES="flask Wand"
+nix-shell -p '(import <nixos-unstable> {}).callPackage ./default.nix { buildPythonPackage = pkgs.python38Packages.buildPythonPackage; pythonPackages = pkgs.python38Packages; }' --run "FLASK_APP=. FLASK_ENV=development python $*"

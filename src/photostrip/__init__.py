@@ -9,6 +9,7 @@ def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
     app.config['MAX_CONTENT_LENGTH'] = 25 * 1024 * 1024
+    app.config['UPLOAD_FOLDER'] = "/tmp/photostrip";
 
     @app.route('/', methods=['GET'])
     def root():
@@ -35,3 +36,8 @@ def create_app(test_config=None):
         return send_file(stream, mimetype="image/png", as_attachment=True, attachment_filename="photostrip.png", add_etags=False)
 
     return app
+
+app = create_app()
+
+if __name__ == "__main__":
+    app.run()

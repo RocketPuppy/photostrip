@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-PACKAGES="flask Wand waitress"
-
-nix-shell -p "(import <nixos-unstable> {}).python38.withPackages(ps: with ps; [ $PACKAGES ])" --run "FLASK_APP=. FLASK_ENV=development python $*"
